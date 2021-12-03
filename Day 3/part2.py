@@ -1,15 +1,6 @@
 with open('Day 3\input1.txt') as f:
     lines = f.readlines()
 
-def binaryToDecimal(binary):
-    decimal, i, n = 0, 0, 0
-    while(binary != 0):
-        dec = binary % 10
-        decimal = decimal + dec * pow(2, i)
-        binary = binary//10
-        i += 1
-    return decimal  
-
 oxygen = lines
 for bit in range(0, len(oxygen[0])-1):
     zeros = []
@@ -44,5 +35,5 @@ for bit in range(0, len(CO2[0])-1):
     else:
         CO2 = ones
 
-print(binaryToDecimal(int(oxygen[0]))*binaryToDecimal(int(CO2[0])))
+print(int(oxygen[0],2)*int(CO2[0],2))
 

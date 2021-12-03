@@ -1,16 +1,6 @@
 with open('Day 3\input1.txt') as f:
     lines = f.readlines()
 
-def binaryToDecimal(binary):
-     
-    decimal, i, n = 0, 0, 0
-    while(binary != 0):
-        dec = binary % 10
-        decimal = decimal + dec * pow(2, i)
-        binary = binary//10
-        i += 1
-    return decimal  
-
 gamma = ""
 epsilon = ""
 for bit in range(0, len(lines[0])-1):
@@ -29,7 +19,7 @@ for bit in range(0, len(lines[0])-1):
         epsilon += "0"
 
 print(gamma, epsilon)
-gamma = binaryToDecimal(int(gamma))
-epsilon = binaryToDecimal(int(epsilon))
+gamma = int(gamma,2)
+epsilon = int(epsilon,2)
 print(gamma*epsilon)
 
